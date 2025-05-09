@@ -1,0 +1,9 @@
+# Ignore all files in these directories
+archives/*
+documentations/*
+markdowns/*
+zips/*
+
+# Ignore all __pycache__ folders recursively
+__pycache__/
+**/__pycache__/

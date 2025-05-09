@@ -1,0 +1,745 @@
+tFileDelete:
+  utilite: "Supprime un fichier ou un dossier du système de fichiers."
+  exemple: | 
+    Suppression d'un fichier temporaire après traitement.
+tMap:
+  utilite: "Permet de transformer et de mapper des données entre différentes structures."
+  exemple: | 
+    Mapping entre une colonne source et une colonne cible avec transformation.
+tDie:
+  utilite: "Arrête l'exécution du job en cas d'erreur ou de condition spécifique."
+  exemple: | 
+    Arrêt du job si une condition d'erreur est détectée.
+tFileInputDelimited:
+  utilite: "Lit un fichier texte délimité (CSV, TSV, etc.) ligne par ligne."
+  exemple: | 
+    Lecture d'un fichier CSV pour alimenter une table de données.
+tFileOutputDelimited:
+  utilite: "Écrit des données dans un fichier texte délimité (CSV, TSV, etc.)."
+  exemple: | 
+    Export des résultats d'un traitement dans un fichier CSV.
+tFileList:
+  utilite: "Liste les fichiers d'un dossier selon un filtre donné."
+  exemple: | 
+    Parcours de tous les fichiers d'un dossier pour traitement.
+tJava:
+  utilite: "Permet d'exécuter du code Java personnalisé dans le job."
+  exemple: | 
+    Calcul spécifique non couvert par les composants standards.
+tLogRow:
+  utilite: "Affiche les données dans la console ou le log pour vérification."
+  exemple: | 
+    Affichage des lignes traitées pour debug.
+tSendMail:
+  utilite: "Envoie un email avec ou sans pièce jointe."
+  exemple: | 
+    Notification en cas d'erreur ou de fin de traitement.
+tFileInputExcel:
+  utilite: "Lit des données depuis un fichier Excel."
+  exemple: | 
+    Extraction de données d'un reporting Excel.
+tO2TInput:
+  utilite: "Composant personnalisé pour l'intégration O2T (exemple)."
+  exemple: | 
+    Lecture de données depuis une source O2T.
+tO2TOutput:
+  utilite: "Composant personnalisé pour la sortie O2T (exemple)."
+  exemple: | 
+    Écriture de données vers une cible O2T.
+tFileOutputExcel:
+  utilite: "Écrit des données dans un fichier Excel."
+  exemple: |
+    de résultats dans un fichier Excel.
+tFilterRow:
+  utilite: "Filtre les lignes d'un flux selon une condition."
+  exemple: |
+    Garder uniquement les lignes où le montant > 1000.
+tJoin:
+  utilite: "Joint deux flux de données sur une ou plusieurs clés."
+  exemple: |
+    Jointure entre clients et commandes sur l'identifiant client.
+tAggregateRow:
+  utilite: "Agrège les données d'un flux (somme, moyenne, etc.)."
+  exemple: |
+    Calcul du chiffre d'affaires total par client.
+tSortRow:
+  utilite: "Trie les lignes d'un flux selon une ou plusieurs colonnes."
+  exemple: |
+    Trier les ventes par date décroissante.
+tReplicate:
+  utilite: "Duplique un flux de données vers plusieurs sorties."
+  exemple: |
+    Envoyer le même flux vers deux traitements différents.
+tUniqRow:
+  utilite: "Supprime les doublons d'un flux de données."
+  exemple: |
+    Garder une seule ligne par identifiant unique.
+tXMLMap:
+  utilite: "Mappe et transforme des données XML."
+  exemple: |
+    Conversion d'un flux de données en structure XML cible.
+tMysqlInput:
+  utilite: "Lit des données depuis une base MySQL."
+  exemple: |
+    Lecture de la table clients depuis MySQL.
+tMysqlOutput:
+  utilite: "Écrit des données dans une base MySQL."
+  exemple: |
+    Insertion de données traitées dans une table MySQL.
+tOracleInput:
+  utilite: "Lit des données depuis une base Oracle."
+  exemple: |
+    Extraction de commandes depuis Oracle.
+tOracleOutput:
+  utilite: "Écrit des données dans une base Oracle."
+  exemple: |
+    Insertion de résultats dans une table Oracle.
+tMSSqlInput:
+  utilite: "Lit des données depuis une base SQL Server."
+  exemple: |
+    Lecture de la table employés depuis SQL Server.
+tMSSqlOutput:
+  utilite: "Écrit des données dans une base SQL Server."
+  exemple: |
+    Insertion de données dans une table SQL Server.
+tPostgresqlInput:
+  utilite: "Lit des données depuis une base PostgreSQL."
+  exemple: |
+    Lecture de la table produits depuis PostgreSQL.
+tPostgresqlOutput:
+  utilite: "Écrit des données dans une base PostgreSQL."
+  exemple: |
+    Insertion de données dans une table PostgreSQL.
+tRowGenerator:
+  utilite: "Génère des données fictives pour des tests."
+  exemple: |
+    Générer 1000 lignes de test avec des valeurs aléatoires.
+tFixedFlowInput:
+  utilite: "Injecte des données fixes (saisies à la main) dans un flux."
+  exemple: |
+    Fournir des valeurs de test pour un développement.
+tFileCopy:
+  utilite: "Copie un ou plusieurs fichiers d'un dossier à un autre."
+  exemple: |
+    Copier des fichiers sources vers un dossier d'archive.
+tFileExist:
+  utilite: "Teste la présence d'un fichier ou dossier."
+  exemple: |
+    Vérifier si un fichier d'entrée existe avant traitement.
+tFileProperties:
+  utilite: "Récupère les propriétés d'un fichier (taille, date, etc.)."
+  exemple: |
+    Obtenir la date de modification d'un fichier log.
+tNormalize:
+  utilite: "Normalise des colonnes répétées en plusieurs lignes."
+  exemple: |
+    Transformer une colonne multi-valeurs en plusieurs lignes simples.
+tDenormalize:
+  utilite: "Regroupe plusieurs lignes en une seule avec colonnes concaténées."
+  exemple: |
+    Fusionner les commandes d'un client en une seule ligne.
+tExtractDelimitedFields:
+  utilite: "Extrait des champs d'une colonne délimitée."
+  exemple: |
+    Séparer une colonne CSV en plusieurs colonnes distinctes.
+tReplace:
+  utilite: "Remplace des valeurs dans un flux de données."
+  exemple: |
+    Remplacer les valeurs NULL par 0.
+tJavaRow:
+  utilite: "Permet d'écrire du code Java pour chaque ligne du flux."
+  exemple: |
+    Calcul d'un champ personnalisé pour chaque ligne.
+tWarn:
+  utilite: "Génère un avertissement dans le log."
+  exemple: |
+    Avertir si un seuil est dépassé.
+tSleep:
+  utilite: "Fait une pause dans l'exécution du job."
+  exemple: |
+    Attendre 10 secondes avant de continuer le traitement.
+tWaitForFile:
+  utilite: "Attend l'arrivée d'un fichier avant de poursuivre."
+  exemple: |
+    Attendre la génération d'un fichier par un autre système.
+tMDMInput:
+  utilite: "Lit des données depuis un référentiel MDM."
+  exemple: |
+    Récupérer des entités de référence depuis MDM.
+tMDMOutput:
+  utilite: "Écrit des données dans un référentiel MDM."
+  exemple: |
+    Mettre à jour des entités dans MDM.
+tFlowToIterate:
+  utilite: "Convertit un flux de lignes en itérations individuelles."
+  exemple: |
+    Traiter chaque ligne d'un flux une par une.
+tIterateToFlow:
+  utilite: "Convertit des itérations individuelles en flux de lignes."
+  exemple: |
+    Rassembler les résultats d'une boucle en un flux unique.
+
+tPostgresqlBulkExec:
+  utilite: "Exécute des commandes SQL en masse sur une base PostgreSQL."
+  exemple: |
+    Charger un grand volume de données via COPY ou BULK INSERT.
+tPostgresqlClose:
+  utilite: "Ferme une connexion PostgreSQL ouverte."
+  exemple: |
+    Fermer la connexion à la base en fin de traitement.
+tPostgresqlCommit:
+  utilite: "Valide les transactions en cours dans PostgreSQL."
+  exemple: |
+    Commit après une série d'opérations d'écriture.
+tPostgresqlConnection:
+  utilite: "Établit une connexion à une base PostgreSQL."
+  exemple: |
+    Se connecter à la base avant d'exécuter des requêtes.
+tPostgresqlInput:
+  utilite: "Lit des données depuis une base PostgreSQL."
+  exemple: |
+    Extraire des clients depuis PostgreSQL.
+tPostgresqlOutput:
+  utilite: "Écrit des données dans une base PostgreSQL."
+  exemple: |
+    Insérer des résultats de traitement dans PostgreSQL.
+tPostgresqlOutputBulk:
+  utilite: "Écrit un grand volume de données dans PostgreSQL via BULK."
+  exemple: |
+    Charger un fichier CSV volumineux dans une table PostgreSQL.
+tPostgresqlOutputBulkExec:
+  utilite: "Exécute l'instruction BULK sur PostgreSQL pour charger des données."
+  exemple: |
+    Utiliser COPY pour charger rapidement des données.
+tPostgresqlRollback:
+  utilite: "Annule les transactions non validées dans PostgreSQL."
+  exemple: |
+    Rollback en cas d'erreur lors d'un traitement.
+tPostgresqlRow:
+  utilite: "Exécute une requête SQL personnalisée sur PostgreSQL."
+  exemple: |
+    Mettre à jour une ligne spécifique via une requête SQL.
+tPostgresqlSCD:
+  utilite: "Gère les dimensions à évolution lente (SCD) dans PostgreSQL."
+  exemple: |
+    Historiser les changements d'adresse d'un client.
+tPostgresqlSCDELT:
+  utilite: "Gère les suppressions logiques dans une dimension SCD PostgreSQL."
+  exemple: |
+    Marquer comme supprimées les lignes obsolètes dans une dimension.
+tSQLiteClose:
+  utilite: "Ferme une connexion SQLite ouverte."
+  exemple: |
+    Fermer la connexion à la base SQLite après traitement.
+tSQLiteCommit:
+  utilite: "Valide les transactions en cours dans SQLite."
+  exemple: |
+    Commit après une série d'inserts dans SQLite.
+tSQLiteConnection:
+  utilite: "Établit une connexion à une base SQLite."
+  exemple: |
+    Se connecter à une base SQLite avant de lire ou écrire.
+tSQLiteInput:
+  utilite: "Lit des données depuis une base SQLite."
+  exemple: |
+    Extraire des données de test depuis SQLite.
+tSQLiteOutput:
+  utilite: "Écrit des données dans une base SQLite."
+  exemple: |
+    Insérer des résultats de traitement dans SQLite.
+tSQLiteRollback:
+  utilite: "Annule les transactions non validées dans SQLite."
+  exemple: |
+    Rollback en cas d'erreur lors d'un traitement.
+tSQLiteRow:
+  utilite: "Exécute une requête SQL personnalisée sur SQLite."
+  exemple: |
+    Mettre à jour une ligne spécifique via une requête SQL.
+tGroovy:
+  utilite: "Permet d'exécuter du code Groovy dans un job Talend."
+  exemple: |
+    Réaliser des traitements personnalisés avec Groovy.
+tGroovyFile:
+  utilite: "Exécute un script Groovy stocké dans un fichier."
+  exemple: |
+    Charger et exécuter un script Groovy externe.
+tJavaFlex:
+  utilite: "Permet d'insérer du code Java libre dans le job."
+  exemple: |
+    Ajouter un traitement spécifique non couvert par les composants standards.
+tLibraryLoad:
+  utilite: "Charge une bibliothèque Java externe pour le job."
+  exemple: |
+    Charger un driver JDBC non inclus par défaut.
+tSetGlobalVar:
+  utilite: "Définit une variable globale utilisable dans tout le job."
+  exemple: |
+    Stocker un identifiant calculé pour le réutiliser plus loin.
+tAddLocationFromIP:
+  utilite: "Ajoute une localisation géographique à partir d'une IP ou d'un nom d'hôte."
+  exemple: |
+    Géolocaliser les utilisateurs à partir de leur adresse IP.
+tBufferInput:
+  utilite: "Lit des données depuis un tampon mémoire."
+  exemple: |
+    Alimenter un flux depuis des données stockées temporairement.
+tBufferOutput:
+  utilite: "Écrit des données dans un tampon mémoire."
+  exemple: |
+    Stocker temporairement des résultats intermédiaires.
+tContextDump:
+  utilite: "Exporte toutes les variables de contexte dans un fichier."
+  exemple: |
+    Sauvegarder l'état des variables de contexte pour debug.
+tContextLoad:
+  utilite: "Charge des variables de contexte depuis un fichier."
+  exemple: |
+    Initialiser les paramètres du job depuis un fichier properties.
+tMemorizeRows:
+  utilite: "Stocke temporairement un certain nombre de lignes pour traitement ultérieur."
+  exemple: |
+    Garder en mémoire les 100 dernières lignes traitées.
+tMsgBox:
+  utilite: "Affiche un message pop-up pendant l'exécution du job."
+  exemple: |
+    Alerter l'utilisateur lors d'une étape importante.
+tServerAlive:
+  utilite: "Vérifie la disponibilité d'un serveur distant."
+  exemple: |
+    Tester la connexion à un serveur avant d'envoyer des données.
+
+tAdvancedFileOutputXML:
+  utilite: "Génère un fichier XML avancé à partir d'un flux de données."
+  exemple: |
+    Exporter des données structurées en XML complexe.
+tExternalSortOutput:
+  utilite: "Trie un flux de données volumineux en externe (disque)."
+  exemple: |
+    Trier un très gros fichier texte qui ne tient pas en mémoire.
+tFileOutputARFF:
+  utilite: "Écrit des données au format ARFF (Weka)."
+  exemple: |
+    Exporter des données pour analyse dans Weka.
+tFileOutputJSON:
+  utilite: "Écrit des données dans un fichier JSON."
+  exemple: |
+    Générer un fichier JSON pour une API ou un stockage NoSQL.
+tFileOutputLDIF:
+  utilite: "Écrit des données au format LDIF (annuaires LDAP)."
+  exemple: |
+    Exporter des utilisateurs pour import dans un annuaire LDAP.
+tFileOutputMSDelimited:
+  utilite: "Écrit des fichiers délimités compatibles Microsoft."
+  exemple: |
+    Générer un CSV pour Excel ou Access.
+tFileOutputMSPositional:
+  utilite: "Écrit des fichiers à positions fixes pour Microsoft."
+  exemple: |
+    Générer des fichiers de reporting pour outils Microsoft.
+tFileOutputMSXML:
+  utilite: "Écrit des fichiers XML compatibles Microsoft."
+  exemple: |
+    Exporter des données pour une application Microsoft.
+tFileOutputPositional:
+  utilite: "Écrit des fichiers à largeur fixe."
+  exemple: |
+    Générer un fichier plat pour un système legacy.
+tFileOutputProperties:
+  utilite: "Écrit un fichier de propriétés Java (.properties)."
+  exemple: |
+    Générer un fichier de configuration pour une application.
+tFileOutputRaw:
+  utilite: "Écrit des données binaires ou brutes dans un fichier."
+  exemple: |
+    Sauvegarder des fichiers images ou binaires.
+tFileOutputXML:
+  utilite: "Écrit des données dans un fichier XML."
+  exemple: |
+    Exporter des données structurées en XML simple.
+tPivotToColumnsDelimited:
+  utilite: "Transforme des lignes en colonnes (pivot) dans un fichier délimité."
+  exemple: |
+    Réorganiser un fichier de ventes pour analyse croisée.
+tChangeFileEncoding:
+  utilite: "Change l'encodage d'un fichier texte."
+  exemple: |
+    Convertir un fichier de UTF-8 vers ISO-8859-1.
+tCreateTemporaryFile:
+  utilite: "Crée un fichier temporaire pour un traitement intermédiaire."
+  exemple: |
+    Générer un fichier temporaire pour stocker des résultats intermédiaires.
+tFileArchive:
+  utilite: "Archive un ou plusieurs fichiers dans une archive ZIP/TAR."
+  exemple: |
+    Archiver les logs quotidiens dans un ZIP.
+tFileCompare:
+  utilite: "Compare le contenu de deux fichiers."
+  exemple: |
+    Vérifier si deux exports sont identiques.
+tFileRowCount:
+  utilite: "Compte le nombre de lignes d'un fichier."
+  exemple: |
+    Compter les lignes d'un fichier CSV avant import.
+tFileTouch:
+  utilite: "Crée un fichier vide ou met à jour sa date de modification."
+  exemple: |
+    Générer un fichier témoin pour signaler la fin d'un traitement.
+tFileUnarchive:
+  utilite: "Décompresse une archive ZIP, TAR, etc."
+  exemple: |
+    Extraire des fichiers d'une archive téléchargée.
+tGPGDecrypt:
+  utilite: "Déchiffre un fichier protégé par GPG."
+  exemple: |
+    Décrypter un fichier reçu par email sécurisé.
+tApacheLogInput:
+  utilite: "Lit et analyse un fichier de logs Apache."
+  exemple: |
+    Extraire les accès HTTP pour analyse de trafic.
+tFileInputARFF:
+  utilite: "Lit un fichier ARFF (Weka) pour analyse."
+  exemple: |
+    Importer des données d'apprentissage pour Weka.
+tFileInputFullRow:
+  utilite: "Lit un fichier texte ligne entière (sans découpe)."
+  exemple: |
+    Importer chaque ligne d'un fichier log comme une seule colonne.
+tFileInputJSON:
+  utilite: "Lit des données depuis un fichier JSON."
+  exemple: |
+    Charger des paramètres ou des données structurées.
+tFileInputLDIF:
+  utilite: "Lit des données depuis un fichier LDIF (annuaire LDAP)."
+  exemple: |
+    Importer des utilisateurs depuis un annuaire LDAP.
+tFileInputMail:
+  utilite: "Lit des emails depuis une boîte aux lettres."
+  exemple: |
+    Importer des emails pour analyse ou archivage.
+tFileInputMSDelimited:
+  utilite: "Lit des fichiers délimités Microsoft."
+  exemple: |
+    Importer des données depuis un CSV Excel.
+tFileInputMSPositional:
+  utilite: "Lit des fichiers à positions fixes Microsoft."
+  exemple: |
+    Importer des données structurées depuis un fichier plat.
+tFileInputMSXML:
+  utilite: "Lit des fichiers XML Microsoft."
+  exemple: |
+    Charger des données depuis un export Microsoft Dynamics.
+tFileInputPositional:
+  utilite: "Lit des fichiers à largeur fixe."
+  exemple: |
+    Importer des données depuis un mainframe ou un legacy.
+tFileInputProperties:
+  utilite: "Lit un fichier de propriétés Java (.properties)."
+  exemple: |
+    Charger des paramètres d'un fichier de configuration.
+tFileInputRaw:
+  utilite: "Lit des données binaires ou brutes depuis un fichier."
+  exemple: |
+    Importer une image ou un fichier binaire.
+tFileInputRegex:
+  utilite: "Lit un fichier texte en utilisant une expression régulière."
+  exemple: |
+    Extraire des données structurées d'un log texte.
+tFileInputXML:
+  utilite: "Lit des données depuis un fichier XML."
+  exemple: |
+    Importer des données structurées pour traitement.
+tNamedPipeClose:
+  utilite: "Ferme un tube nommé (Named Pipe) ouvert."
+  exemple: |
+    Fermer la communication inter-processus après transfert de données.
+tNamedPipeOpen:
+  utilite: "Ouvre un tube nommé (Named Pipe) pour communication."
+  exemple: |
+    Préparer la communication entre deux jobs Talend.
+tNamedPipeOutput:
+  utilite: "Écrit des données dans un tube nommé."
+  exemple: |
+    Envoyer des résultats à un autre processus via Named Pipe.
+
+tFTPClose:
+  utilite: "Ferme une connexion FTP ouverte."
+  exemple: |
+    Terminer la connexion FTP après un transfert.
+tFTPConnection:
+  utilite: "Établit une connexion à un serveur FTP."
+  exemple: |
+    Se connecter à un serveur FTP avant d'envoyer ou recevoir des fichiers.
+tFTPDelete:
+  utilite: "Supprime un fichier sur un serveur FTP."
+  exemple: |
+    Effacer un fichier distant après téléchargement.
+tFTPFileExist:
+  utilite: "Teste la présence d'un fichier sur un serveur FTP."
+  exemple: |
+    Vérifier si un fichier existe avant de lancer un transfert.
+tFTPFileList:
+  utilite: "Liste les fichiers présents sur un serveur FTP."
+  exemple: |
+    Parcourir tous les fichiers d'un dossier FTP.
+tFTPFileProperties:
+  utilite: "Récupère les propriétés d'un fichier sur FTP (taille, date, etc.)."
+  exemple: |
+    Obtenir la date de modification d'un fichier distant.
+tFTPGet:
+  utilite: "Télécharge un ou plusieurs fichiers depuis un serveur FTP."
+  exemple: |
+    Récupérer les fichiers quotidiens déposés sur un FTP.
+tFTPPut:
+  utilite: "Envoie un ou plusieurs fichiers sur un serveur FTP."
+  exemple: |
+    Déposer un fichier généré sur un serveur distant.
+tFTPRename:
+  utilite: "Renomme un fichier sur un serveur FTP."
+  exemple: |
+    Renommer un fichier après traitement sur FTP.
+tFTPTruncate:
+  utilite: "Vide le contenu d'un fichier sur un serveur FTP."
+  exemple: |
+    Réinitialiser un fichier log distant.
+tFileFetch:
+  utilite: "Télécharge un fichier depuis une URL (HTTP, FTP, etc.)."
+  exemple: |
+    Télécharger un fichier de données depuis un site web.
+tHttpRequest:
+  utilite: "Envoie une requête HTTP (GET, POST, etc.) et récupère la réponse."
+  exemple: |
+    Appeler une API REST pour récupérer des données.
+tPOP:
+  utilite: "Lit des emails depuis une boîte aux lettres POP3."
+  exemple: |
+    Récupérer les emails entrants pour traitement.
+tREST:
+  utilite: "Appelle un service web RESTful."
+  exemple: |
+    Consommer une API REST pour intégrer des données.
+tRSSInput:
+  utilite: "Lit des flux RSS/XML."
+  exemple: |
+    Importer les dernières actualités d'un flux RSS.
+tRSSOutput:
+  utilite: "Génère un flux RSS/XML à partir de données."
+  exemple: |
+    Publier des résultats de traitement sous forme de flux RSS.
+tSetKerberosConfiguration:
+  utilite: "Configure l'authentification Kerberos pour le job."
+  exemple: |
+    S'authentifier sur un service sécurisé via Kerberos.
+tSetKeystore:
+  utilite: "Configure un keystore Java pour les connexions sécurisées."
+  exemple: |
+    Charger un certificat SSL pour une connexion HTTPS.
+tSetProxy:
+  utilite: "Configure un proxy pour les connexions réseau."
+  exemple: |
+    Passer par un proxy HTTP pour accéder à Internet.
+tSOAP:
+  utilite: "Appelle un service web SOAP."
+  exemple: |
+    Consommer un webservice SOAP pour récupérer des informations.
+tSocketInput:
+  utilite: "Lit des données entrantes sur un port réseau."
+  exemple: |
+    Recevoir des messages en temps réel via socket.
+tSocketOutput:
+  utilite: "Envoie des données sur un port réseau."
+  exemple: |
+    Envoyer des alertes à un autre système via socket.
+tSVNLogInput:
+  utilite: "Lit les logs de commits d'un dépôt SVN."
+  exemple: |
+    Analyser l'historique des modifications d'un projet.
+tWebService:
+  utilite: "Appelle un service web (SOAP/REST)."
+  exemple: |
+    Intégrer des données via un webservice externe.
+tWebServiceInput:
+  utilite: "Lit les réponses d'un webservice."
+  exemple: |
+    Récupérer les résultats d'une requête webservice.
+tXMLRPCInput:
+  utilite: "Appelle un service XML-RPC et lit la réponse."
+  exemple: |
+    Consommer une API XML-RPC pour intégrer des données.
+tAssert:
+  utilite: "Vérifie une condition logique dans le job (assertion)."
+  exemple: |
+    Arrêter le job si une condition n'est pas respectée.
+tAssertCatcher:
+  utilite: "Intercepte les erreurs d'assertion dans le job."
+  exemple: |
+    Gérer les assertions échouées pour logging ou alertes.
+tChronometerStart:
+  utilite: "Démarre un chronomètre pour mesurer le temps d'exécution."
+  exemple: |
+    Mesurer la durée d'un traitement spécifique.
+tChronometerStop:
+  utilite: "Arrête un chronomètre et récupère la durée mesurée."
+  exemple: |
+    Obtenir le temps total d'une opération.
+tFlowMeter:
+  utilite: "Compte et mesure les lignes transitant dans un flux."
+  exemple: |
+    Suivre le nombre de lignes traitées à chaque étape.
+tFlowMeterCatcher:
+  utilite: "Intercepte et logge les mesures des FlowMeters."
+  exemple: |
+    Centraliser les statistiques de traitement.
+tLogCatcher:
+  utilite: "Capture et logge les messages d'erreur, d'avertissement, etc."
+  exemple: |
+    Enregistrer toutes les erreurs dans un fichier log.
+tStatCatcher:
+  utilite: "Collecte les statistiques d'exécution du job."
+  exemple: |
+    Générer un rapport d'exécution en fin de job.
+tFlowTolerate:
+  utilite: "Ignore les erreurs sur un flux et continue le traitement."
+  exemple: |
+    Continuer le traitement même si certaines lignes échouent.
+tForeach:
+  utilite: "Itère sur une liste de valeurs ou de fichiers."
+  exemple: |
+    Traiter tous les fichiers d'un dossier un par un.
+tInfiniteLoop:
+  utilite: "Exécute une boucle infinie jusqu'à condition d'arrêt."
+  exemple: |
+    Attendre un fichier en boucle jusqu'à son arrivée.
+tLoop:
+  utilite: "Exécute une boucle sur une plage de valeurs."
+  exemple: |
+    Répéter une opération 10 fois.
+tPostjob:
+  utilite: "Définit des actions à exécuter après le job principal."
+  exemple: |
+    Envoyer un email de notification à la fin du job.
+tPrejob:
+  utilite: "Définit des actions à exécuter avant le job principal."
+  exemple: |
+    Initialiser les variables ou vérifier les prérequis.
+tRunJob:
+  utilite: "Exécute un autre job Talend depuis le job courant."
+  exemple: |
+    Chaîner plusieurs jobs pour un traitement complet.
+tUnite:
+  utilite: "Fusionne plusieurs flux en un seul."
+  exemple: |
+    Rassembler les résultats de plusieurs traitements.
+tWaitForSocket:
+  utilite: "Attend la disponibilité d'un port réseau avant de continuer."
+  exemple: |
+    Attendre qu'un serveur soit prêt avant d'envoyer des données.
+tWaitForSqlData:
+  utilite: "Attend l'arrivée de nouvelles données dans une base SQL."
+  exemple: |
+    Déclencher un traitement dès qu'une nouvelle ligne est insérée.
+
+tFuzzyMatch:
+  utilite: "Effectue une correspondance approximative (fuzzy matching) entre chaînes."
+  exemple: |
+    Identifier les doublons dans une liste de clients malgré des fautes de frappe.
+tAddCRCRow:
+  utilite: "Ajoute une colonne de contrôle CRC à un flux de données."
+  exemple: |
+    Générer un CRC pour vérifier l'intégrité des données transférées.
+tIntervalMatch:
+  utilite: "Vérifie si une valeur se situe dans un intervalle défini."
+  exemple: |
+    Classer des montants dans des tranches (petit, moyen, grand).
+tReplaceList:
+  utilite: "Remplace des valeurs selon une liste de correspondances."
+  exemple: |
+    Remplacer des codes internes par des libellés lisibles.
+tSchemaComplianceCheck:
+  utilite: "Vérifie la conformité d'un flux à un schéma défini."
+  exemple: |
+    Contrôler que toutes les colonnes attendues sont présentes.
+tSetEnv:
+  utilite: "Définit une variable d'environnement système."
+  exemple: |
+    Définir JAVA_HOME avant d'exécuter un traitement Java.
+tSSH:
+  utilite: "Exécute des commandes sur un serveur distant via SSH."
+  exemple: |
+    Lancer un script shell sur un serveur Linux.
+tSystem:
+  utilite: "Exécute une commande système locale."
+  exemple: |
+    Lister les fichiers d'un dossier via 'ls' ou 'dir'.
+tAggregateSortedRow:
+  utilite: "Agrège des données sur un flux préalablement trié."
+  exemple: |
+    Calculer des totaux par groupe sur un flux trié.
+tConvertType:
+  utilite: "Convertit le type d'une colonne (string, int, date, etc.)."
+  exemple: |
+    Transformer une colonne texte en entier pour calculs.
+tExternalSortRow:
+  utilite: "Trie un flux de données volumineux sur disque."
+  exemple: |
+    Trier un fichier de plusieurs Go sans tout charger en mémoire.
+tFilterColumns:
+  utilite: "Sélectionne ou retire des colonnes d'un flux."
+  exemple: |
+    Supprimer les colonnes inutiles avant export.
+tFilterRow:
+  utilite: "Filtre les lignes selon une condition."
+  exemple: |
+    Garder uniquement les lignes où le montant > 1000.
+tJoin:
+  utilite: "Joint deux flux de données sur une ou plusieurs clés."
+  exemple: |
+    Jointure entre clients et commandes sur l'identifiant client.
+tReplace:
+  utilite: "Remplace des valeurs dans un flux de données."
+  exemple: |
+    Remplacer les valeurs NULL par 0.
+tSampleRow:
+  utilite: "Sélectionne un échantillon de lignes d'un flux."
+  exemple: |
+    Prendre 10% des lignes pour test ou validation.
+tSortRow:
+  utilite: "Trie les lignes d'un flux selon une ou plusieurs colonnes."
+  exemple: |
+    Trier les ventes par date décroissante.
+tXMLMap:
+  utilite: "Mappe et transforme des données XML."
+  exemple: |
+    Conversion d'un flux de données en structure XML cible.
+tEDIFACTToXML:
+  utilite: "Convertit un fichier EDIFACT en XML."
+  exemple: |
+    Transformer des messages EDI en fichiers XML pour traitement.
+tDTDValidator:
+  utilite: "Valide un fichier XML contre une DTD."
+  exemple: |
+    Vérifier la conformité d'un fichier XML avant import.
+tExtractXMLField:
+  utilite: "Extrait des champs d'un fichier XML selon un XPath."
+  exemple: |
+    Extraire le numéro de commande d'un fichier XML de commande.
+tWriteXMLField:
+  utilite: "Ajoute ou modifie un champ dans un fichier XML."
+  exemple: |
+    Ajouter un élément <status> dans chaque commande XML.
+tSCDValidator:
+  utilite: "Valide la gestion des dimensions à évolution lente (SCD)."
+  exemple: |
+    Vérifier l'historisation correcte des changements de données.
+tXSDValidator:
+  utilite: "Valide un fichier XML contre un schéma XSD."
+  exemple: |
+    Contrôler la structure d'un fichier XML reçu.
+tXSLT:
+  utilite: "Transforme un fichier XML à l'aide d'une feuille XSLT."
+  exemple: |
+    Générer un rapport HTML à partir d'un fichier XML.
+
+tESBConsumer:
+  utilite: "Consomme un service web via ESB (Enterprise Service Bus)."
+  exemple: |
+    Appeler un service SOAP ou REST exposé sur un ESB pour intégrer des données ou orchestrer des processus métier.
