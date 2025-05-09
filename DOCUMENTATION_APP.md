@@ -81,17 +81,18 @@ pip install -r requirements.txt
 ## Exemple de flux de traitement
 
 1. Depuis Talend, générer la documentation HTML du job à documenter.
-2. Déposer le fichier ZIP Talend généré dans le dossier `zips/`.
-3. Installer les dépendances (une seule fois) :
+2. Créer les dossiers de la partie Organisation des dossiers
+3. Déposer le fichier ZIP Talend généré dans le dossier `zips/`.
+4. Installer les dépendances (une seule fois) :
    ```bash
    pip install -r requirements.txt
    ```
-4. Lancer l’application :
+5. Lancer l’application :
    ```bash
    python main.py
    ```
-5. Un fichier Markdown est généré dans `markdowns/` pour chaque job, structuré et enrichi.
-6. Les fichiers sources sont archivés automatiquement.
+6. Un fichier Markdown est généré dans `markdowns/` pour chaque job, structuré et enrichi.
+7. Les fichiers sources sont archivés automatiquement.
 
 ---
 
