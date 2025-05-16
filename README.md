@@ -11,3 +11,5 @@ Version actuelle : 1.0
   - Création de la partie Historique en fonction de fichier suivi et historique des connecteurs talend
   - Suppression des liens hypertexte dans le sommaire
   - Affiche de tous les context utilisés dans le job sauf les password et les valeurs de o2t
+
+## DOCUMENTATION Dans le Fichier DOCUMENTATION_APP.md
