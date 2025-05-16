@@ -10,6 +10,18 @@ Avec ADT, documenter devient simple… et même agréable !
 
 Version actuelle : 1.0
 
+---
+
+## Sommaire
+
+- [Structure des principaux scripts](#structure-des-principaux-scripts)
+- [Dépendances](#dépendances)
+- [Organisation des dossiers](#organisation-des-dossiers)
+- [Utilisation de l'application](#utilisation-de-lapplication)
+- [Extension et personnalisation](#extension-et-personnalisation)
+
+---
+
 ### Changelog
 
 - Version 1.0
