@@ -6,6 +6,19 @@ L’application `ADT (AutoDocTalend)` automatise la génération de documentatio
 
 Avec ADT, documenter devient simple… et même agréable !
 ---
+## Version de l'application
+
+Version actuelle : 1.0
+
+### Changelog
+
+- Version 1.0
+  - Création de l'application ADT (AutoDocTalend)
+
+- Version 1.1
+  - Création de la partie Historique en fonction de fichier suivi et historique des connecteurs talend
+  - Suppression des liens hypertexte dans le sommaire
+  - Affiche de tous les context utilisés dans le job sauf les password et les valeurs de o2t
 
 ## Structure des principaux scripts
 
@@ -19,26 +32,33 @@ Avec ADT, documenter devient simple… et même agréable !
 
 ### 2. `talend_doc_cleaner.py`
 
-- **Rôle** : Cœur de la génération de la documentation à partir des fichiers HTML générés par Talend.
-- **Fonctions clés** :
-  - `generate_markdown(input_path, output_path)` : Orchestration complète de la génération du fichier Markdown à partir d’un fichier HTML Talend.
-  - `extract_sections(soup)` : Extrait toutes les sections de haut niveau du HTML, en ignorant les sections de contexte.
-  - `extract_unique_components(soup)` : Liste tous les types de composants utilisés dans le job Talend.
+- **Rôle** : Cœur de la génération de la documentation à partir des fichiers HTML produits par Talend.
+- **Fonctions principales** :
+  - `generate_markdown(input_path, output_path)` : Orchestration complète de la génération du fichier Markdown à partir d’un fichier HTML Talend. Gère l’ordre des sections, le sommaire, et l’archivage.
+  - `extract_sections(soup)` : Extrait toutes les sections principales du HTML, en ignorant celles liées au contexte.
+  - `extract_unique_components(soup)` : Liste tous les types de composants uniques utilisés dans le job Talend.
   - `extract_context_usages(soup)` : Repère tous les paramètres contextuels (`context.x`) utilisés dans le job.
-  - `write_section(...)` : Gère l’écriture structurée des différentes sections Markdown, notamment la liste des composants et la section de contexte.
-  - `write_table_of_contents(...)` : Génère dynamiquement la table des matières selon les sections réellement présentes dans la documentation.
-  - `load_composant_descriptions(...)` : Charge les descriptions des composants depuis un fichier YAML externe (optionnel).
-  - `parse_connector_info(...)` : Extrait les métadonnées du connecteur (nom, version, objectif, etc.) depuis la section Description du HTML.
-  - `write_context_section(...)` : Génère la section « Context Utilisé », affichant les variables de contexte et leurs valeurs si disponibles.
-  - `get_context_value_from_table(...)` : Extrait la valeur d’une variable de contexte à partir du tableau ContextePROD dans le HTML.
+  - `write_section(...)` : Gère l’écriture structurée de chaque section Markdown, y compris la liste des composants, la section contexte, et la section Historique (fichiers CSV historiques).
+  - `write_simple_summary(f, sections)` : Insère un sommaire simple et fixe en haut du document Markdown.
+  - `write_connector_description(f, info)` : Rédige le bloc de description du connecteur (nom, version, objectif, historique, etc.).
+  - `write_o2t_header(f, unique_components, composants_info)` : Génère un tableau récapitulatif pour les composants O2T (si présents).
+  - `write_context_section(f, context_vars, soup)` : Génère la section « Context Utilisé », affichant les variables de contexte et leurs valeurs extraites du tableau ContextePROD.
+  - `get_context_value_from_table(soup, context_name)` : Extrait la valeur d’une variable de contexte depuis le tableau ContextePROD du HTML.
+  - `substitute_context_vars(expr, soup)` : Remplace dynamiquement toutes les variables `context.<nom>` dans un chemin/une expression par leur valeur issue du ContextePROD (fonction clé pour l’affichage correct des chemins dans la section Historique).
+  - `format_historique_versions(historique)` : Met en forme la section historique/changelog pour une meilleure lisibilité.
+  - `load_composant_descriptions(yaml_path)` : Charge les descriptions des composants depuis un fichier YAML externe (optionnel).
+  - `parse_connector_info(sections)` : Extrait les métadonnées du connecteur à partir de la section Description.
+  - `is_context_section(title)` : Détermine si un titre de section doit être ignoré pour la documentation.
+  - `html_to_markdown(html)` : Convertit du contenu HTML en texte markdown simplifié.
 
 - **Spécificités** :
-  - Les sections `Paramètres` et `Code source` sont systématiquement ignorées dans la documentation finale pour plus de clarté.
-  - La section « Context Utilisé » est générée automatiquement et insérée juste après le tableau des types de composants utilisés.
-  - Tous les commentaires et docstrings du code sont en anglais pour faciliter la collaboration internationale et la maintenance.
-  - La table des matières est toujours à jour avec la structure réelle du document généré.
-  - **Format attendu pour l'historique du connecteur** : chaque entrée de l'historique doit suivre le format : `v1.0 07/05/2025 AFE - Ceci est une explication` (version, date, initiales de l'auteur, description de la modification).
-  - **Champ "Objectif" obligatoire** : le champ « Objectif » (résumé) du connecteur doit impérativement être renseigné. Il correspond au résumé fonctionnel du connecteur et sera affiché dans la documentation générée.
+  - La section `Historique` est générée automatiquement, listant tous les fichiers CSV historiques/suivi référencés par les composants tFileOutputDelimited/tFileInputDelimited, avec substitution dynamique des variables de contexte pour afficher le chemin réel.
+  - La section « Context Utilisé » est toujours insérée immédiatement après le tableau des types de composants utilisés.
+  - Les sections `Paramètres` et `Code source` sont systématiquement ignorées pour plus de clarté.
+  - Tous les commentaires et docstrings du code sont en anglais pour faciliter la maintenance et la collaboration internationale.
+  - La table des matières reflète toujours la structure réelle du document généré.
+  - **Format attendu pour l'historique du connecteur** : chaque entrée doit suivre le format : `v1.0 07/05/2025 AFE - Ceci est une explication` (version, date, initiales de l'auteur, description de la modification).
+  - **Champ "Objectif" obligatoire** : le champ « Objectif » (résumé) du connecteur doit impérativement être renseigné et sera affiché dans la documentation générée.
 
 ### 3. `talend_zip_importer.py`
 
