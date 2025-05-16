@@ -98,15 +98,15 @@ pip install -r requirements.txt
 ---
 
 
-## Exemple de flux de traitement
+## Utilisation de l'application
 
-1. Depuis Talend, générer la documentation HTML du job à documenter.
-2. Créer les dossiers de la partie Organisation des dossiers
-3. Déposer le fichier ZIP Talend généré dans le dossier `zips/`.
-4. Installer les dépendances (une seule fois) :
+1.Installer les dépendances (une seule fois) :
    ```bash
    pip install -r requirements.txt
    ```
+2. Créer les dossiers de la partie Organisation des dossiers (une seule fois)
+3. Depuis Talend, générer la documentation HTML du job à documenter.
+4. Déposer le fichier ZIP Talend généré dans le dossier `zips/`.
 5. Lancer l’application :
    ```bash
    python main.py
