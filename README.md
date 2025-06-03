@@ -12,4 +12,6 @@ Version actuelle : 1.1
   - Suppression des liens hypertexte dans le sommaire
   - Affiche de tous les context utilisés dans le job sauf les password et les valeurs de o2t
 
+- Version 1.2
+  - Correction bug en rapport avec le context
 ## DOCUMENTATION Dans le Fichier DOCUMENTATION_APP.md
