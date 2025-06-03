@@ -260,6 +260,7 @@ def substitute_context_vars(expr, soup):
     expr = re.sub(r'\s+', '', expr)
     return expr
 
+
 def write_section(f, section, unique_components, composants_info, context_vars=None, soup=None):
     """
     Writes a markdown section to the output file, handling special cases for component sections.
