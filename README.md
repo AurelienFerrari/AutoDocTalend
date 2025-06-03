@@ -1,6 +1,6 @@
 ## Version de l'application
 
-Version actuelle : 1.1
+Version actuelle : 1.2
 
 ### Changelog
 
