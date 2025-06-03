@@ -255,7 +255,7 @@ def substitute_context_vars(expr, soup):
     matches = re.findall(r'context\.([a-zA-Z0-9_]+)', expr)
     for var in matches:
         if var in context_prod:
-            expr = re.sub(r'context\.' + re.escape(var), context_prod[var], expr)
+            expr = re.sub(r'context\.' + re.escape(var), lambda m: context_prod[var], expr)
     expr = expr.replace('+', '').replace('"', '').replace("'", '').strip()
     expr = re.sub(r'\s+', '', expr)
     return expr
